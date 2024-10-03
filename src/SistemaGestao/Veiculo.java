@@ -25,6 +25,11 @@ public class Veiculo {
         System.out.println("Manutenção genérica realizada.");
     }
 
+    @Override
+    public String toString() {
+        return "Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano + ", Quilometragem: " + quilometragem;
+    }
+
 }
 
 
