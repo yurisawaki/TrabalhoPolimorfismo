@@ -7,6 +7,9 @@ public class Main {
         Carro carro = new Carro("Ford", "Fusion", 2005, 50000);
         Moto moto = new Moto("Honda", "Hornet", 2012, 10000);
 
+        System.out.println("Atributos dos veículos:");
+        System.out.println(caminhao);
+
 
         Frota frota = new Frota();
         frota.adicionarVeiculo(caminhao);
