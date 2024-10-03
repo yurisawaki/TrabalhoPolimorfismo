@@ -9,6 +9,11 @@ public class EventoDesempenho<T extends Veiculo> {
         this.descricao = descricao;
     }
 
+    public T getVeiculo() {
+        return veiculo;
+
+    }
+
     public String getDescricao() {
         return descricao;
     }
