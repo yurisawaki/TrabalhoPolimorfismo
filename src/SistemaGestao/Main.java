@@ -3,13 +3,10 @@ package SistemaGestao;
 public class Main {
     public static void main(String[] args) {
 
-        Caminhao caminhao = new Caminhao("Volvo", "FH", 2020, 100000);
-        Carro carro = new Carro("Toyota", "Corolla", 2019, 50000);
-        Moto moto = new Moto("Honda", "CB500", 2021, 10000);
+        Caminhao caminhao = new Caminhao("Toyota", "Supra", 2000, 100000);
+        Carro carro = new Carro("Ford", "Fusion", 2005, 50000);
+        Moto moto = new Moto("Honda", "Hornet", 2012, 10000);
 
-        caminhao.acelerar();
-        carro.acelerar();
-        moto.acelerar();
 
         Frota frota = new Frota();
         frota.adicionarVeiculo(caminhao);
@@ -19,23 +16,24 @@ public class Main {
         System.out.println("Realizando manutenção em todos os veículos:");
         frota.realizarManutencaoEmTodos();
 
-        Viagem<Caminhao> viagemCaminhao = new Viagem<>(caminhao, "São Paulo", "Rio de Janeiro", 430);
-        Viagem<Carro> viagemCarro = new Viagem<>(carro, "Belo Horizonte", "Brasília", 740);
-        Viagem<Moto> viagemMoto = new Viagem<>(moto, "Salvador", "Recife", 800);
+        Viagem<Caminhao> viagemCaminhao = new Viagem<>(caminhao, "Manaus", "Belém", 530);
+        Viagem<Carro> viagemCarro = new Viagem<>(carro, "Curitiba", "Porto Alegre", 700);
+        Viagem<Moto> viagemMoto = new Viagem<>(moto, "Florianópolis", "Blumenau", 150);
 
         System.out.println("\nIniciando viagens:");
         viagemCaminhao.iniciarViagem();
         viagemCarro.iniciarViagem();
         viagemMoto.iniciarViagem();
 
-        Rastreador rastreador = new Rastreador();
+
+        Rastreador<Veiculo> rastreador = new Rastreador<>();
         rastreador.adicionarVeiculo(caminhao);
         rastreador.adicionarVeiculo(carro);
         rastreador.adicionarVeiculo(moto);
 
-        EventoDesempenho eventoCaminhao = new EventoDesempenho(caminhao, "Consumo de combustível: 30L/100km");
-        EventoDesempenho eventoCarro = new EventoDesempenho(carro, "Consumo de combustível: 15L/100km");
-        EventoDesempenho eventoMoto = new EventoDesempenho(moto, "Consumo de combustível: 5L/100km");
+        EventoDesempenho<Veiculo> eventoCaminhao = new EventoDesempenho<>(caminhao, "Consumo de combustível: 40L/100km");
+        EventoDesempenho<Veiculo> eventoCarro = new EventoDesempenho<>(carro, "Consumo de combustível: 12L/100km");
+        EventoDesempenho<Veiculo> eventoMoto = new EventoDesempenho<>(moto, "Consumo de combustível: 6L/100km");
 
         System.out.println("\nRegistrando eventos de desempenho:");
         rastreador.registrarEvento(caminhao, eventoCaminhao);
