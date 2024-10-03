@@ -34,4 +34,11 @@ public class Caminhao extends Veiculo implements OperacaoVeiculo {
     public void descarregarCarga(int peso) {
 
     }
+    
+    @Override
+    public String toString() {
+        return "Caminhão - " + super.toString();
+    }
+
+    
 }
