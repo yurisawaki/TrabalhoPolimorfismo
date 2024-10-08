@@ -1,4 +1,4 @@
-package SistemaGestao;
+
 
 public class Veiculo {
     protected String marca;

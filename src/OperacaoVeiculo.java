@@ -1,4 +1,4 @@
-package SistemaGestao;
+
 
 public interface OperacaoVeiculo {
     void realizarViagem(String origem, String destino, int distancia);

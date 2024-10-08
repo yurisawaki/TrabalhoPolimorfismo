@@ -1,4 +1,4 @@
-package SistemaGestao;
+
 
 public class Viagem<T extends OperacaoVeiculo> {
     private T veiculo;
